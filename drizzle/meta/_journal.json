@@ -1,0 +1,27 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716059348566,
+      "tag": "0000_kind_baron_strucker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1716059521521,
+      "tag": "0001_steep_triton",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716059731152,
+      "tag": "0002_shocking_eternals",
+      "breakpoints": true
+    }
+  ]
+}
