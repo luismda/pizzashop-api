@@ -34,15 +34,18 @@ console.log(chalk.yellow('✔︎ Created customers.'))
 /**
  * Create manager
  */
-const [manager] = await db.insert(users).values([
-  {
-    name: faker.person.fullName(),
-    email: 'admin@admin.com',
-    role: 'manager',
-  },
-]).returning({
-  id: users.id,
-})
+const [manager] = await db
+  .insert(users)
+  .values([
+    {
+      name: faker.person.fullName(),
+      email: 'admin@admin.com',
+      role: 'manager',
+    },
+  ])
+  .returning({
+    id: users.id,
+  })
 
 console.log(chalk.yellow('✔︎ Created manager.'))
 
