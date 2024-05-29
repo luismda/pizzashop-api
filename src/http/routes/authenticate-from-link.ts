@@ -5,6 +5,7 @@ import Elysia, { t } from 'elysia'
 import { auth } from '../auth'
 import { db } from '../../db/connection'
 import { authLinks } from '../../db/schema'
+import { NotFoundError } from '../errors/not-found-error'
 
 export const authenticateFromLink = new Elysia().use(auth).get(
   '/auth-links/authenticate',
@@ -18,7 +19,7 @@ export const authenticateFromLink = new Elysia().use(auth).get(
     })
 
     if (!authLinkFromCode) {
-      throw new Error('Auth link not found.')
+      throw new NotFoundError('Auth link not found.')
     }
 
     const daysSinceAuthLinkWasCreated = dayjs().diff(

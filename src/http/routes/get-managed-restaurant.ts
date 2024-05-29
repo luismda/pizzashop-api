@@ -2,6 +2,7 @@ import Elysia from 'elysia'
 
 import { auth } from '../auth'
 import { db } from '../../db/connection'
+import { NotFoundError } from '../errors/not-found-error'
 
 export const getManagedRestaurant = new Elysia()
   .use(auth)
@@ -19,7 +20,7 @@ export const getManagedRestaurant = new Elysia()
     })
 
     if (!managedRestaurant) {
-      throw new Error('Managed restaurant not found.')
+      throw new NotFoundError('Managed restaurant not found.')
     }
 
     return managedRestaurant
