@@ -36,6 +36,13 @@
       "when": 1717116930810,
       "tag": "0004_modern_falcon",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1717202267127,
+      "tag": "0005_clean_radioactive_man",
+      "breakpoints": true
     }
   ]
 }
