@@ -2,6 +2,7 @@ import { Elysia, NotFoundError } from 'elysia'
 
 import { signOut } from './routes/sign-out'
 import { getProfile } from './routes/get-profile'
+import { approveOrder } from './routes/approve-order'
 import { sendAuthLink } from './routes/send-auth-link'
 import { getOrderDetails } from './routes/get-order-details'
 import { registerRestaurant } from './routes/register-restaurant'
@@ -16,6 +17,7 @@ const app = new Elysia()
   .use(getProfile)
   .use(getManagedRestaurant)
   .use(getOrderDetails)
+  .use(approveOrder)
   .error({
     RESOURCE_NOT_FOUND: NotFoundError,
   })
