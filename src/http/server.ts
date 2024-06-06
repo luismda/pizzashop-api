@@ -9,9 +9,15 @@ import { deliverOrder } from './routes/deliver-order'
 import { sendAuthLink } from './routes/send-auth-link'
 import { dispatchOrder } from './routes/dipatch-order'
 import { getOrderDetails } from './routes/get-order-details'
+import { getMonthReceipt } from './routes/get-month-receipt'
 import { registerRestaurant } from './routes/register-restaurant'
+import { getDayOrderAmount } from './routes/get-day-orders-amount'
+import { getPopularProducts } from './routes/get-popular-products'
 import { authenticateFromLink } from './routes/authenticate-from-link'
 import { getManagedRestaurant } from './routes/get-managed-restaurant'
+import { getMonthOrdersAmount } from './routes/get-month-orders-amount'
+import { getMonthCanceledOrdersAmount } from './routes/get-month-canceled-orders-amount'
+import { getDailyReceiptInPeriod } from './routes/get-daily-receipt-in-period'
 
 const app = new Elysia()
   .use(sendAuthLink)
@@ -26,6 +32,12 @@ const app = new Elysia()
   .use(deliverOrder)
   .use(dispatchOrder)
   .use(getOrders)
+  .use(getMonthReceipt)
+  .use(getDayOrderAmount)
+  .use(getMonthOrdersAmount)
+  .use(getMonthCanceledOrdersAmount)
+  .use(getPopularProducts)
+  .use(getDailyReceiptInPeriod)
   .error({
     RESOURCE_NOT_FOUND: NotFoundError,
   })
